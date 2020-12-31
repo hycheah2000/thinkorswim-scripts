@@ -1,0 +1,44 @@
+Rel 1D - 输入以下ThinkScript
+
+plot r1d=(close/close[1]-close("VTI")/close("VTI")[1])* 100/(close("VTI")/close("VTI")[1]);
+AssignBackgroundColor(if r1d >= 2 then createcolor(10, 94, 0) else if r1d > 0 and r1d <2 then createcolor(38, 135, 26) else if r1d < 0 and r1d >-2then createcolor(181, 38, 38) else if r1d <= -2 then createcolor(135, 0, 0) else Color.BLACK);
+
+==============================================
+
+Rel 5D - 输入以下ThinkScript
+
+plot r5d=(close/close[5]-close("VTI")/close("VTI")[5])* 100/(close("VTI")/close("VTI")[5]);
+AssignBackgroundColor(if r5d >= 2 then createcolor(10, 94, 0) else if r5d > 0 and r5d <2 then createcolor(38, 135, 26) else if r5d < 0 and r5d >-2then createcolor(181, 38, 38) else if r5d <= -2 then createcolor(135, 0, 0) else Color.BLACK);
+
+==============================================
+Rel 1M - 输入以下ThinkScript
+
+plot r1m=(close/close[20]-close("VTI")/close("VTI")[20])* 100/(close("VTI")/close("VTI")[20]);
+AssignBackgroundColor(if r1m >= 2 then createcolor(10, 94, 0) else if r1m > 0 and r1m <2 then createcolor(38, 135, 26) else if r1m < 0 and r1m >-2then createcolor(181, 38, 38) else if r1m <= -2 then createcolor(135, 0, 0) else Color.BLACK);
+
+==============================================
+
+C/S - 输入以下ThinkScript
+
+plot cs=(close-ExpAverage(close,20))/ExpAverage(close,20)*100;
+AssignBackgroundColor(if cs >= 5 then createcolor(10, 94, 0) else if cs > 0 and cs <5 then createcolor(38, 135, 26) else if cs < 0 and cs >-5then createcolor(181, 38, 38) else if cs <= -5 then createcolor(135, 0, 0) else Color.BLACK);
+
+==============================================
+
+S/M - 输入以下ThinkScript
+
+plot sm=(ExpAverage(close,20)-ExpAverage(close,60))/ExpAverage(close,60)*100;
+AssignBackgroundColor(if sm >= 5 then createcolor(10, 94, 0) else if sm > 0 and sm <5 then createcolor(38, 135, 26) else if sm < 0 and sm >-5then createcolor(181, 38, 38) else if sm <= -5 then createcolor(135, 0, 0) else Color.BLACK);
+
+==============================================
+
+M/L - 输入以下ThinkScript
+
+plot ml=(ExpAverage(close,60)-ExpAverage(close,120))/ExpAverage(close,120)*100;
+AssignBackgroundColor(if ml >= 5 then createcolor(10, 94, 0) else if ml > 0 and ml <5 then createcolor(38, 135, 26) else if ml < 0 and ml >-5then createcolor(181, 38, 38) else if ml <= -5 then createcolor(135, 0, 0) else Color.BLACK);
+
+==============================================
+
+Scan Query - 输入以下ThinkScript
+
+plot Condition = Average(VWAP*Volume,20)>50000000 and Lowest(VWAP*Volume,20)>20000000;
